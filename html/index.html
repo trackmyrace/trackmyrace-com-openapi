@@ -1,0 +1,493 @@
+<!doctype html>
+<html>
+  <head>
+    <title>trackmyrace.com API</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>trackmyrace.com API</h1>
+    <div class="app-desc">The trackmyrace API provides methods to snychronize trackmyrace events with data in timing softwares, such that result and starter information can be uploaded to trackmyrace or event infos can be downloaded.</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="admin@trackmyrace.com">admin@trackmyrace.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/api</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+    <ol>
+      <li>APIKey KeyParamName:session KeyInQuery:true KeyInHeader:false</li>
+    </ol>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Authentication">Authentication</a></h4>
+  <ul>
+  <li><a href="#loginPost"><code><span class="http-method">post</span> /login/</code></a></li>
+  <li><a href="#logoutGet"><code><span class="http-method">get</span> /logout/</code></a></li>
+  </ul>
+  <h4><a href="#Participants">Participants</a></h4>
+  <ul>
+  <li><a href="#addParticipants"><code><span class="http-method">post</span> /participants/{eventId}/</code></a></li>
+  </ul>
+
+  <h1><a name="Authentication">Authentication</a></h1>
+  <div class="method"><a name="loginPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /login/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">loginPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">tx_tmrcore_api[userlogin][userlogin] (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Authentication username </div><div class="param">tx_tmrcore_api[userlogin][password] (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Authentication password </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#AuthResponse">AuthResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "success" : {
+    "timer" : 6,
+    "session" : "session",
+    "usergroups" : [ "Timekeeper", "Timekeeper" ],
+    "organizer" : 1,
+    "user" : 0
+  },
+  "errors" : [ {
+    "code" : 5,
+    "property" : "property",
+    "message" : "message"
+  }, {
+    "code" : 5,
+    "property" : "property",
+    "message" : "message"
+  } ]
+}</code></pre>
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#AuthResponse">AuthResponse</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="logoutGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /logout/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">logoutGet</span>)</div>
+    <div class="method-notes">Use this to flush all caches related to the data updated during the session.</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ApiResponse">ApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "success" : "{}",
+  "errors" : [ {
+    "code" : 5,
+    "property" : "property",
+    "message" : "message"
+  }, {
+    "code" : 5,
+    "property" : "property",
+    "message" : "message"
+  } ]
+}</code></pre>
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#ApiResponse">ApiResponse</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Participants">Participants</a></h1>
+  <div class="method"><a name="addParticipants"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /participants/{eventId}/</code></pre></div>
+    <div class="method-summary">Add a new participant or set of participants (<span class="nickname">addParticipants</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">eventId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The external event ID assigned in trackmyrace </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#RegistrationRequest">RegistrationRequest</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Buyer of the registration with data for the participants </div>
+
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ApiResponse">ApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "success" : "{}",
+  "errors" : [ {
+    "code" : 5,
+    "property" : "property",
+    "message" : "message"
+  }, {
+    "code" : 5,
+    "property" : "property",
+    "message" : "message"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#ApiResponse">ApiResponse</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#ApiError"><code>ApiError</code> - </a></li>
+    <li><a href="#ApiResponse"><code>ApiResponse</code> - </a></li>
+    <li><a href="#AuthResponse"><code>AuthResponse</code> - </a></li>
+    <li><a href="#AuthResponse_success"><code>AuthResponse_success</code> - </a></li>
+    <li><a href="#Buyer"><code>Buyer</code> - </a></li>
+    <li><a href="#Participant"><code>Participant</code> - </a></li>
+    <li><a href="#RegistrationRequest"><code>RegistrationRequest</code> - </a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="ApiError"><code>ApiError</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">message </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">code (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">property (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ApiResponse"><code>ApiResponse</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">success (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">errors (optional)</div><div class="param-desc"><span class="param-type"><a href="#ApiError">array[ApiError]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="AuthResponse"><code>AuthResponse</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">success (optional)</div><div class="param-desc"><span class="param-type"><a href="#AuthResponse_success">AuthResponse_success</a></span>  </div>
+<div class="param">errors (optional)</div><div class="param-desc"><span class="param-type"><a href="#ApiError">array[ApiError]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="AuthResponse_success"><code>AuthResponse_success</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">session </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">user </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> ID of the authenticated user </div>
+<div class="param">usergroups </div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  </div>
+        <div class="param-enum-header">Enum:</div>
+        
+<div class="param">timer (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> ID of the authenticated timekeeper </div>
+<div class="param">organizer (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> ID of the authenticated organizer </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Buyer"><code>Buyer</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> External ID identying the buyer format: alphanum</div>
+<div class="param">firstName </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">lastName </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">email </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: email</div>
+<div class="param">createdAt (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+<div class="param">street (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">zip (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">city (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">country (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Alpha-2 or alpha-3 format: iso-3166</div>
+<div class="param">mobile (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: phonenumber</div>
+<div class="param">phone (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: phonenumber</div>
+<div class="param">company (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the company for which this registration is done </div>
+<div class="param">clubName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the sport club this registration is for. Participants will be assigned to this club unless specified </div>
+<div class="param">teamName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the team to assign participants to by default </div>
+<div class="param">verificationId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> External Id to identify the order </div>
+<div class="param">participants (optional)</div><div class="param-desc"><span class="param-type"><a href="#Participant">array[Participant]</a></span>  </div>
+<div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span> Additional attributes as key-value map of strings that should be connected to the buyer </div>
+<div class="param">couponCodes (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Participant"><code>Participant</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> External ID identifying the participant format: alphanum</div>
+<div class="param">firstName </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">lastName </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: email</div>
+<div class="param">competition </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The external id identifying the competition the participant takes part at </div>
+<div class="param">clubName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the sport club the participant is taking place for </div>
+<div class="param">teamName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the team to assign the participant to </div>
+<div class="param">birthyear (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">birthmonth (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">birthday (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">gender (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">m</div><div class="param-enum">w</div>
+<div class="param">nationality (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Alpha-2 or alpha-3 format: iso-3166</div>
+<div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span> Additional attributes as key-value map of strings that should be connected to the participant </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="RegistrationRequest"><code>RegistrationRequest</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">tx_tmrcore_api[registration] (optional)</div><div class="param-desc"><span class="param-type"><a href="#Buyer">Buyer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
